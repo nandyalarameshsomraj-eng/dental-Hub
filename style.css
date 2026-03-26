@@ -168,6 +168,18 @@ img {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.location-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.location-link:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary);
+}
+
 /* Navigation */
 .navbar {
   position: fixed;
