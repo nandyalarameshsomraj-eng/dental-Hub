@@ -759,6 +759,116 @@ img {
   margin-bottom: 16px;
 }
 
+/* Appointment Page Specific Styles */
+.appointment-page {
+  background: radial-gradient(circle at top right, var(--dark-elevated), var(--dark));
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* Reduced from 80vh for shorter form */
+  padding: 140px 20px 60px;
+}
+
+.form-wrapper {
+  max-width: 750px; /* Increased from 600px */
+  width: 100%;
+  padding: 50px 70px; /* Adjusted padding */
+  background: rgba(11, 31, 58, 0.6);
+  backdrop-filter: blur(25px); /* Increased blur for more luxury feel */
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+  border-radius: var(--radius-lg);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.appointment-form .row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--soft-grey);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 16px;
+  color: var(--primary);
+  width: 20px;
+  height: 20px;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 14px 20px; /* Reduced from 50px left padding */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--light);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+  appearance: none;
+}
+
+.input-wrapper select option {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 200, 83, 0.2);
+}
+
+.form-footer {
+  margin-top: 32px;
+  text-align: center;
+  color: var(--soft-grey);
+  font-size: 0.875rem;
+}
+
+.icon-small {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .appointment-form .row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Animations */
 .reveal {
   opacity: 0;

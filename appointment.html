@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Dentrust Dental Care</title>
+  <meta name="description" content="Book your dental appointment with Dentrust Dental Care online via WhatsApp.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles / Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-theme appointment-page">
+
+  <!-- Navigation -->
+  <nav class="navbar glass-nav">
+    <div class="container nav-content">
+      <div class="logo">
+        <i data-lucide="leaf" class="brand-icon"></i>
+        <span>Dentrust Dental Care</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#reviews">Reviews</a>
+      </div>
+      <div class="nav-cta">
+        <a href="index.html#contact" class="btn btn-secondary">Contact Us</a>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Appointment Form Section -->
+  <section class="section appointment-hero">
+    <div class="container form-container">
+      <div class="form-wrapper glass-card reveal slide-up">
+        <div class="form-header">
+          <div class="hero-badge">📅 Online Booking</div>
+          <h1>Book Your <span class="highlight">Visit</span></h1>
+          <p>Fill in the details below to book via WhatsApp instantly.</p>
+        </div>
+
+        <form id="appointmentForm" class="appointment-form">
+          <div class="input-group">
+            <label for="fullName">Full Name</label>
+            <div class="input-wrapper">
+              <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-group">
+              <label for="age">Age</label>
+              <div class="input-wrapper">
+                <input type="number" id="age" placeholder="Your age" required>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <div class="input-wrapper">
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" onclick="sendToWhatsApp()" class="btn btn-primary btn-large">
+            Book via WhatsApp
+          </button>
+        </form>
+        
+        <div class="form-footer">
+          <p><i data-lucide="info" class="icon-small"></i> Our team will confirm your slot shortly after you send the message.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Dentrust Dental Care. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+
+    function sendToWhatsApp() {
+      const name = document.getElementById('fullName').value;
+      const age = document.getElementById('age').value;
+      const phone = document.getElementById('phone').value;
+
+      if (!name || !age || !phone) {
+        alert('Please fill out all fields before booking.');
+        return;
+      }
+
+      const phoneNumber = "917093009953"; // Updated with clinic's official number
+      const message = `*New Appointment Request*%0A%0A` +
+                      `*Name:* ${name}%0A` +
+                      `*Age:* ${age}%0A` +
+                      `*Phone:* ${phone}%0A%0A` +
+                      `I would like to book an appointment. Please confirm my slot.`;
+
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
+</body>
+</html>
